@@ -1,0 +1,35 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://mini_dog.gd" id="1_minidog"]
+[ext_resource type="Texture2D" path="res://whitedog1.png" id="2_dog1"]
+[ext_resource type="Texture2D" path="res://whitedog2.png" id="3_dog2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_minidog"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dog1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dog2")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_minidog"]
+size = Vector2(54, 40)
+
+[node name="MiniDog" type="Area2D"]
+script = ExtResource("1_minidog")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_minidog")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_minidog")

@@ -1,0 +1,72 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://game.gd" id="1_game"]
+[ext_resource type="FontFile" path="res://pixel_font_bold.fnt" id="2_font"]
+[ext_resource type="FontFile" path="res://pixel_font_large_bold.fnt" id="3_font_big"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hud"]
+font = ExtResource("2_font")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_win"]
+font = ExtResource("3_font_big")
+font_size = 37
+line_spacing = 0.0
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_win"]
+content_margin_left = 40.0
+content_margin_top = 32.0
+content_margin_right = 40.0
+content_margin_bottom = 24.0
+bg_color = Color(0.96, 0.94, 0.86, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0, 0, 0, 1)
+anti_aliasing = false
+
+[node name="Game" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_game")
+
+[node name="LevelLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 416.0
+offset_bottom = 56.0
+text = "Level 1 / 10"
+label_settings = SubResource("LabelSettings_hud")
+
+[node name="TimeLabel" type="Label" parent="."]
+texture_filter = 1
+offset_left = 16.0
+offset_top = 60.0
+offset_right = 416.0
+offset_bottom = 100.0
+text = "Time 00:00.00"
+label_settings = SubResource("LabelSettings_hud")
+
+[node name="WinBox" type="CenterContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="WinBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_win")
+
+[node name="WinLabel" type="Label" parent="WinBox/Panel"]
+texture_filter = 1
+layout_mode = 2
+text = "You found all the dogs!"
+label_settings = SubResource("LabelSettings_win")
+horizontal_alignment = 1
+vertical_alignment = 1

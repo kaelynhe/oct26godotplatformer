@@ -1,0 +1,43 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://cloud1.png" id="2_cloud1"]
+[ext_resource type="Texture2D" path="res://cloud2.png" id="3_cloud2"]
+
+[node name="Sky" type="CanvasLayer"]
+layer = -10
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.56, 0.8, 0.98, 1)
+
+[node name="Clouds" type="Node2D" parent="."]
+texture_filter = 1
+
+[node name="Cloud1" type="Sprite2D" parent="Clouds"]
+position = Vector2(330, 120)
+texture = ExtResource("2_cloud1")
+
+[node name="Cloud2" type="Sprite2D" parent="Clouds"]
+position = Vector2(760, 70)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_cloud2")
+
+[node name="Cloud3" type="Sprite2D" parent="Clouds"]
+position = Vector2(1020, 190)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_cloud1")
+
+[node name="Cloud4" type="Sprite2D" parent="Clouds"]
+position = Vector2(560, 250)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_cloud2")
+
+[node name="Cloud5" type="Sprite2D" parent="Clouds"]
+position = Vector2(110, 230)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_cloud2")
