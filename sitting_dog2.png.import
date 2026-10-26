@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r6gi4m15yuuj"
-path="res://.godot/imported/whitedog2.png-58fdcb9db87ee96f9b801bfb08886598.ctex"
+uid="uid://b06lr0mnobev"
+path="res://.godot/imported/sitting_dog2.png-e1d5fe8cd433e62a14fbea00bc345458.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://whitedog2.png"
-dest_files=["res://.godot/imported/whitedog2.png-58fdcb9db87ee96f9b801bfb08886598.ctex"]
+source_file="res://sitting_dog2.png"
+dest_files=["res://.godot/imported/sitting_dog2.png-e1d5fe8cd433e62a14fbea00bc345458.ctex"]
 
 [params]
 

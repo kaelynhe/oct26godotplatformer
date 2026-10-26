@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cybgfk8hbnrum"
-path="res://.godot/imported/BOTHgrassBOTTOM.png-f198e4a0705c8c0ace5d3b8097f815f4.ctex"
+uid="uid://bhcx0pt3pxgi1"
+path="res://.godot/imported/sitting_dog.png-9d400af3303d0e4a40008d5e850f42a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BOTHgrassBOTTOM.png"
-dest_files=["res://.godot/imported/BOTHgrassBOTTOM.png-f198e4a0705c8c0ace5d3b8097f815f4.ctex"]
+source_file="res://sitting_dog.png"
+dest_files=["res://.godot/imported/sitting_dog.png-9d400af3303d0e4a40008d5e850f42a0.ctex"]
 
 [params]
 

@@ -1,5 +1,5 @@
 # Builds level2.tscn .. level10.tscn from the text maps below.
-#   #  = block (grass/dirt edges and bottoms are picked automatically)
+#   #  = block (grass/dirt edges are picked automatically)
 #   D  = the white dog (sits on the block under it)
 # Each row is 16 columns: tile x = -1 .. 14. Rows are tile y = 0 .. 7.
 # Run from the project folder:  powershell -File tools\make_levels.ps1
@@ -100,7 +100,6 @@ $levels = [ordered]@{
 # Tileset source ids (see tiles.tres)
 $GRASS = @{ none = 4; left = 7; right = 10; both = 5 }
 $DIRT  = @{ none = 3; left = 8; right = 9;  both = 6 }
-$BOTTOM = @{ 3 = 11; 4 = 12; 5 = 13; 6 = 14; 7 = 15; 8 = 16; 9 = 17; 10 = 18 }
 
 $root = Split-Path $PSScriptRoot -Parent
 
@@ -129,7 +128,6 @@ foreach ($entry in $levels.GetEnumerator()) {
     $right = -not $solid.ContainsKey("$($x + 1),$y")
     $side = if ($left -and $right) { 'both' } elseif ($left) { 'left' } elseif ($right) { 'right' } else { 'none' }
     $src = if ($solid.ContainsKey("$x,$($y - 1)")) { $DIRT[$side] } else { $GRASS[$side] }
-    if ($y -lt 7 -and -not $solid.ContainsKey("$x,$($y + 1)")) { $src = $BOTTOM[$src] }
     $bw.Write([Int16]$x); $bw.Write([Int16]$y); $bw.Write([UInt16]$src)
     $bw.Write([UInt16]0); $bw.Write([UInt16]0); $bw.Write([UInt16]0)
   }
