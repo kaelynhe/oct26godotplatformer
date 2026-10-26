@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://game.gd" id="1_game"]
 [ext_resource type="FontFile" path="res://pixel_font_bold.fnt" id="2_font"]
 [ext_resource type="FontFile" path="res://pixel_font_large_bold.fnt" id="3_font_big"]
+[ext_resource type="AudioStream" path="res://music/sunny_stroll.wav" id="4_music"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hud"]
 font = ExtResource("2_font")
@@ -32,6 +33,11 @@ anti_aliasing = false
 process_mode = 3
 layer = 10
 script = ExtResource("1_game")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_music")
+volume_db = -6.0
+autoplay = true
 
 [node name="LevelLabel" type="Label" parent="."]
 texture_filter = 1
